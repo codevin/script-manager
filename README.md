@@ -15,6 +15,13 @@ See ./scripts-home/ directory to see examples:
    - Usually exit code tells if there is success (exit code 0) or failure (other than 0)
    - cmdline communicates results back to main script (in case of say, checklists, menu, input etc.) by sending on stdout.
 
+## How to Build
+Front end is Vue/Vutify/Vuex based. Do 'yarn build' to build and populate ./dist static files directory first. 
+And then run the go server:
+
+cd go-server
+./build.sh 
+
 ## How it works
 When script uses
 
@@ -24,3 +31,4 @@ the args are output on stderr, with prefix ":cmdline --title ...". Web server, w
 a line with ":cmdline", it will interpret it as widget request, and then drives the UI to show the widget to user. (We use Vue for final widgets.)
 And response is transmitted on stdin, back to cmdline, which is currently incharge of stdin, stdout, stderr.
 All other lines are considered as script logs. 
+
