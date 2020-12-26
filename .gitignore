@@ -1,7 +1,9 @@
 .DS_Store
 node_modules
 /dist
-
+./go-server/cmdline
+./go-server/update
+./go-server/script-manager
 
 # local env files
 .env.local
