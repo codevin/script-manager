@@ -1,0 +1,160 @@
+{% func Head(title string) %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Scheduling System</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="_assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="_assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="_assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="_assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="_assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="_assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="_assets/bootstrap-5.0.0-alpha1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="_assets/bootstrap-5.0.0-alpha1-dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,300&amp;display=swap" rel="stylesheet">
+    <link href="_assets/css/theme.css" rel="stylesheet"> 
+    <link href="_assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./_assets/css/index-autogen.css" rel="stylesheet">
+
+    <link href="_assets/css/jquery.dm-uploader.min.css" rel="stylesheet">
+    <link href="_assets/css/dm-uploader-extra.css" rel="stylesheet">
+    <link href="vue/vuejs-dialog-orig/dist/vuejs-dialog.min.css" rel="stylesheet">
+    <link href="vue/libs/vuetify.min.css" rel="stylesheet">
+    <link href="vue/libs/googlefonts.css" rel="stylesheet">
+
+    <link href="vue/fonts/material-design-icon-iconfont/material-design-icons.css" rel="stylesheet">
+    <!-- To use these icons:  -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+   
+    
+  </head>
+
+{% endfunc %}
+
+{% func JSCodeForHead() %}
+  <!-- Nothing right now -->
+{% endfunc %}
+
+{% func CSSCodeForHead() %}
+/* Auto-generated file.  Don't edit. */
+
+input[type="checkbox"] {
+   opacity: 1
+}
+
+{% endfunc %}
+
+{% func CustomCheckBox_NOTWORKING() %}
+
+.custom-checkbox > [type="checkbox"],
+.custom-checkbox > label{
+		margin-bottom:0px !important;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+}
+.custom-checkbox > [type="checkbox"]:not(:checked),
+.custom-checkbox > [type="checkbox"]:checked {
+		position: absolute;
+		left: -9999px;
+}
+.custom-checkbox > [type="checkbox"]:not(:checked) + label,
+.custom-checkbox > [type="checkbox"]:checked + label {
+		position: relative;
+		padding-left: 22px;
+		cursor: pointer;
+}
+.custom-checkbox > [type="checkbox"]:not(:checked) + label:before,
+.custom-checkbox > [type="checkbox"]:checked + label:before {
+		content: '';
+		position: absolute;
+		left:0; 
+		top: 50%;
+		margin-top:-9px;
+		width: 17px; 
+		height: 17px;
+		border: 1px solid #ddd;
+		background: #ffffff;
+		border-radius: 2px;
+}
+.custom-checkbox > [type="checkbox"]:not(:checked) + label:after,
+.custom-checkbox > [type="checkbox"]:checked + label:after {
+		font: normal normal normal 12px/1 'Glyphicons Halflings';
+		content: '\e013';
+		position: absolute;
+		top: 50%;
+		margin-top:-7px;
+		left: 2px;
+		color: #94C947;
+		/* xtransition: all .2s; */
+}
+	
+.custom-checkbox > [type="checkbox"]:not(:checked) + label:after {
+		opacity: 0;
+		transform: scale(0);
+}
+.custom-checkbox > [type="checkbox"]:checked + label:after {
+		opacity: 1;
+		transform: scale(1);
+}
+	
+.custom-checkbox > [type="checkbox"][data-indeterminate] + label:after,
+.custom-checkbox > [type="checkbox"][data-indeterminate] + label:after {
+		content: '\2212';
+		left: 2px;
+		opacity: 1;
+		transform: scale(1);
+}
+	
+.custom-checkbox > [type="checkbox"]:disabled:not(:checked) + label:before,
+.custom-checkbox > [type="checkbox"]:disabled:checked + label:before {
+	  	box-shadow: none;
+	  	background-color: #eeeeee;
+		border-color: #eeeeee;
+		cursor: not-allowed;
+		opacity: 1;
+		color: #dadada;
+}
+.custom-checkbox > [type="checkbox"]:disabled:checked + label:after {
+	  color: #dadada; cursor: not-allowed;
+}
+.custom-checkbox > [type="checkbox"]:disabled + label {
+	  color: #aaa; cursor: not-allowed;
+}
+.custom-checkbox > [type="checkbox"]:checked:focus + label:before,
+.custom-checkbox > [type="checkbox"]:not(:checked):focus + label:before {
+		border: 1px solid #66afe9;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.custom-checkbox > label:hover:before {
+  		border: 1px solid #88D2FF !important;
+	}
+.custom-checkbox > [type="checkbox"]:disabled:not(:checked) + label:hover:before,
+.custom-checkbox > [type="checkbox"]:disabled:checked + label:hover:before{
+		border: 1px solid #E4E4E4 !important;
+}
+	
+{% endfunc %}
+

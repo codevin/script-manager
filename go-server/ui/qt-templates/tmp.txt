@@ -1,0 +1,43 @@
+
+   <div justify="center">
+
+      <v-btn
+        color="primary" 
+        rounded 
+        small
+      >
+         <i :class="runStatus.icon">&nbsp;</i>
+         {{ runStatus.action }} 
+      </v-btn>
+
+
+      <ui-modal 
+           :script="script"
+      > 
+      </ui-modal>
+
+      <!-- colors are: primary, normal, error --> 
+      <v-btn
+        color="secondary" 
+        small
+        rounded 
+        v-on:click="logStatus.click"
+        :depressed="logStatus.depressed"
+        :disabled="logStatus.disabled"
+      >
+         <i :class="logStatus.icon">&nbsp;</i>
+         {{ LogStatus.action }} 
+      </v-btn>
+
+      <v-btn
+        color="warning" 
+        rounded 
+        small
+        v-on:click="uiStatus.click"
+        :depressed="uiStatus.depressed"
+        :disabled="uiStatus.disabled"
+      >
+         <i :class="uiStatus.icon">&nbsp;</i>
+         {{ uiStatus.action }} 
+      </v-btn>
+  </div>

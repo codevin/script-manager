@@ -1,0 +1,14 @@
+{% func ScriptsTableVue() %}
+   <div id="VueScriptsTable">
+       <scripts-table></scripts-table>
+       <script-modal></script-modal>
+   </div>
+{% endfunc %}
+
+
+{% func VueComponent_ScriptsTable() %}
+Vue.component('scripts-table', httpVueLoader("/vue/components/scripts-table.vue"))
+Vue.component('script-modal', httpVueLoader("/vue/components/script-modal.vue"))
+Vue.component('script-state-banner', httpVueLoader("/vue/components/script-state-banner.vue"))
+
+{% endfunc %}

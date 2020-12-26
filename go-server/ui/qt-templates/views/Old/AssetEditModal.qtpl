@@ -1,0 +1,130 @@
+
+{% func EditAssetModal() %}
+        <!-- EditAsset template -->
+        <!-- script type="text/html" id="template-edit-asset-modal" -->
+		<!-- Modal -->
+		<div class="modal fade" id="editAssetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="editAssetModalLabel">Edit Track Details</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+
+		        <form id="editAssetForm" onSubmit="editAsset(this);" >
+			      	<div class="form-group" style="display:none">
+					    <label for="editAssetFormAssetId">Pick a Track to edit</label>
+					    <input type="text" class="form-control" id="editAssetFormAssetId" value="" >
+		      		</div>
+
+				  <div class="form-group">
+				    <label for="editAssetFormAssetName">Track Name</label>
+				    <input type="text" class="form-control" id="editAssetFormAssetName" value="" aria-describedby="nameHelp" />
+				  </div>
+				  <div class="form-group">
+				    <label for="editAssetFormAssetDuration">Track Duration (Optional)</label>
+				    <input required type="text" value="" class="form-control" id="editAssetFormAssetDuration" aria-describedby="nameHelp" />
+                                  </div>
+				  <div class="form-group">
+				    <label for="editAssetFormAssetType">Track Type</label>
+				    <select class="form-control" id="editAssetFormAssetType" value="">
+                                          <option name="audio">Audio</option>
+				    </select>
+                                  </div>
+				  <div class="form-group">
+				    <label for="editAssetFormAssetFileName">Rename Uploaded File (Optional)</label>
+				    <input type="text" class="form-control" id="editAssetFormAssetFileName" value="" aria-describedby="nameHelp" />
+				  </div>
+                                <br/>
+
+			      	<div class="form-group">
+
+		                   <button type="submit" class="btn btn-primary" >Update</button>
+                                </div>
+
+                        </form>
+
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+		      </div>
+		    </div>
+		  </div>
+		</div>
+    <!-- /script -->
+
+{% endfunc %}
+
+{% func Javascript_EditAssetModal() %}
+
+function editAsset() {
+	var thisId = $("#editAssetFormAssetId").val()
+	if (thisId === undefined || thisId == "" ) {
+		alert("This Asset couldn't be found.")
+		return false
+	}
+
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	    	var incomingData = JSON.parse(this.responseText)
+
+	    	dataUpdate(); // Generic request to update all the data.
+
+	        $("#editAssetFormAssetName").val("");
+	        $("#editAssetFormAssetType").val("");
+	        $("#editAssetFormAssetDuration").val("");
+	        $("#editAssetFormAssetFileName").val("");
+
+	    }
+	  };
+	var formData = new FormData();
+	formData.append("Id", thisId); 
+	formData.append("Name", $("#editAssetFormAssetName").val());
+	formData.append("AssetType", $("#editAssetFormAssetType").val()); 
+	formData.append("DurationInSec", $("#editAssetFormAssetDuration").val());
+	formData.append("FileName", $("#editAssetFormAssetFileName").val());
+	xhttp.open("POST", "/updateAsset", false);
+	xhttp.send(formData);
+
+    $('#editAssetModal').modal('hide');
+
+    updateSchedules();
+    updateAssets();
+    return true
+
+}
+
+// Replaced with new file upload.
+function processNewAssetForm_NOTUSED() {
+
+    // NOTE: Replaced by new multifile upload. 
+    uploadingFile = $('#newAssetFormFile');
+    uploadingFile.addEventListener('change', function() {
+        if(uploadingFile && uploadingFile.value) {
+        	// Allowing file type 
+            var allowedExtensions = /(\.wav|\.mp3)$/i;
+            var filePath = uploadingFile.value
+            let val = uploadingFile.files[0].name;
+    
+            if (!allowedExtensions.exec(filePath)) { 
+                alert('Only Wav and Mp3 Sound Files Allowed'); 
+                fileInput.value = ''; 
+    	        $('#fileValue').innerHTML = "Invalid File Type. Try Again.";
+                return false; 
+            }
+            else{
+    	        $('#fileValue').innerHTML = "<b>Selected :</b> " + val;
+            	return true;
+            }
+    
+        }
+    });
+}
+
+
+{% endfunc %}

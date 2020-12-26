@@ -1,0 +1,39 @@
+
+/* 
+   Overall flow, if we have user entry form specifically customized. 
+
+   function renderForm() {
+      el = createModalForm("user_input_form")  // element tree of the modal.
+      user = getUser("user_id")  // API call to get schedule
+      el.populate(user)   // Populate the form with our content.
+
+      onFormExit() {
+         updated_user = el.final_result()  // 
+         updateUser("user_id", updated_user)  // API call to update the user. 
+      }
+      el.destroy() 
+   }
+
+   // If we want to use standard approach:
+   el = GenericForm("generic")
+   user_form = el.mapToUserSchema(user).modal()
+
+   user = getUser("user_id")  // API call to get schedule
+   user_form.populate(user)
+   onFormExit() {
+         updated_user = user_form.final_result()  // 
+         updateUser("user_id", updated_user)  // API call to update the user 
+   }
+   el.destroy() 
+
+*/
+
+/*
+  Create a clone of specified form. All Id's are prefixed with this new Id. 
+*/
+function instantiateFormTemplate(form_template_id, prefix_id) {
+   new_form = $('#' + form_modal_id).clone(true)     
+   $('#'+prefix_id).append(new_form)
+}
+
+

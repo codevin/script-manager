@@ -1,0 +1,58 @@
+---
+Port: "8080"
+StaticDir: "../dist/"
+ScriptDir: "../scripts-home/"
+Scripts:
+  tests-all: 
+     program: "tests-all.sh"
+     args: ""
+     duration: 3500
+     enabled: true
+  test-yesno: 
+     program: "test-yesno.sh"
+     args: ""
+     duration: 3500
+     enabled: true
+  test-message: 
+     program: "test-message.sh"
+     args: ""
+     duration: 3500
+     enabled: true
+  test-menu: 
+     program: "test-menu.sh"
+     args: ""
+     duration: 3500
+     enabled: true
+  test-checklist: 
+     program: "test-checklist.sh"
+     args: ""
+     duration: 3500
+     enabled: true
+  test-radiolist: 
+     program: "test-radiolist.sh"
+     args: ""
+     duration: 3500
+     enabled: true
+  test-infobox: 
+     program: "test-infobox.sh"
+     args: ""
+     duration: 3500
+     enabled: true
+  test-input: 
+     program: "test-input.sh"
+     args: ""
+     duration: 3500
+     enabled: true
+  test-progress: 
+     program: "test-progress.sh"
+     args: ""
+     duration: 3500
+     enabled: true
+  test-textfile: 
+     program: "test-textfile.sh"
+     args: ""
+     duration: 3500
+     enabled: true
+
+
+

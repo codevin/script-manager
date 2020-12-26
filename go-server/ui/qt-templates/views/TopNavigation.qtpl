@@ -1,0 +1,26 @@
+{% func TopNavigation() %}
+      <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 pl-0">
+
+             <div class="container"><a class="navbar-brand text-primary font-weight-bold" href="index.html"> Script Interaction </a>
+
+             <div class="btn-group emControl" style="">
+                  <label>Start Script
+	          <button class="btn btn-primary ml-auto hover-top-shadow" onclick="startScript();"><i class="fa fa-bullhorn"></i> </button> </label>
+
+	          <button class="btn btn-primary ml-auto hover-top-shadow" onclick="stopScript();"><i class="fa fa-stop"></i> </button>
+             </div>
+
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <!-- <li class="nav-item text-muted"><a class="nav-link active" aria-current="page" href="index.html">Status</a></li> -->
+                  <li class="nav-item"><a class="nav-link" href="#scripts">Scripts</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#assets">Sessions</a></li>
+                  <li class="nav-item"><a class="nav-link" href="Logs.html">Logs</a></li>
+                </ul>
+          </div>
+        </div>
+      </nav>
+
+{% endfunc %}

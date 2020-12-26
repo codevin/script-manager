@@ -1,0 +1,72 @@
+{% func AlertBoxModal() %}
+    <div class="fixed_alert alert-danger alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+        </button>
+        <h4>Oh snap! You got an error!</h4>
+        <p id="SystemAlertMessage">Fixed Alert Message</p>
+   </div>
+{% endfunc %}
+
+{% func OkCancelDialogModal() %}
+    <!-- OKCancelDialogModal -->
+	<div class="modal fade" id="okCancelDialogModal" tabindex="-1" role="dialog" aria-labelledby="timeSettingsModalLabel" aria-hidden="true">
+	     <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="okCancelDialogLabel">Confirmation</h5>
+		      </div>
+		      <div class="modal-body">
+		          <div class="row">
+                               <div id="okCancelMessage" class="text-center"> Message Comes Here</div>
+                          </div>
+		     </div> <!-- modal-body -->
+                     <div class="modal-footer">
+                          <button type="button" class="btn btn-success ok">Yes</button>
+                          <button type="button" class="btn btn-default cancel">No</button>
+                     </div>
+		</div>
+	    </div>
+         </div>
+{% endfunc %}
+
+{% func Javascript_AlertBox() %}
+
+function systemAlert(message) {
+   $("#SystemAlertMessage").text=message  
+   $().alert();
+   setTimeout(function(){$('.alert').alert('close')}, 3000);
+}
+
+function systemDialogOkCancel(message, callback) {
+  //  put message into the body of modal
+  var modal_id = '#okCancelDialogModal'
+
+  $(modal_id).on('show.bs.modal', function (event) {
+      //  store current modal reference
+      var modal = $(this);
+      //  update modal body help text
+      modal.find('.modal-body #okCancelMessage').text(message);
+  });
+
+  //  show modal ringer custom confirmation
+  $(modal_id).modal('show');
+
+  $(modal_id + ' button.ok').off().on('click', function() {
+     $(modal_id).modal('hide');
+     callback(true);
+  });
+
+  $(modal_id + ' button.cancel').off().on('click', function() {
+     $(modal_id).modal('hide');
+     callback(false);
+  });
+}
+
+{% endfunc %}
+
+{% func CSSForAlertBox() %}
+.alert {
+   position: fixed;
+   top: 0px;
+}
+{% endfunc %}

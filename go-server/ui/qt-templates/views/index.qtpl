@@ -1,0 +1,22 @@
+// Note: Outputs of these methods are used by Go program directly to create
+// a single file for each.
+
+{% func HtmlForIndexPage(title string)  %}
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+   {%= Head(title) %} 
+   {%= Body() %} 
+</html>
+{% endfunc %}
+
+{% func JSCodeForIndexPage(title string)  %}
+   {%= JSCodeForHead() %}
+   {%= JSCodeForBody() %}
+{% endfunc %}
+
+{% func CSSForIndexPage(title string)  %}
+   {%= CSSCodeForHead() %}
+   {%= CSSCodeForBody() %}
+{% endfunc %}
+
+
