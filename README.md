@@ -70,3 +70,6 @@ All other lines are considered as script logs.
 * Not all widgets have been tested. Some widgets have been modified to use a different approach than whiptail. (For e.g. progress gauge.)
 
 
+## Notes
+https://github.com/sveinbjornt/Platypus seems to be similar tool for Mac based apps. 
+
